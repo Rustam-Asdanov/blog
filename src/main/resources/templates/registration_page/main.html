@@ -14,17 +14,17 @@
             <img th:src="@{/images/back-ico.png}" alt="back ico" />
         </a>
     </div>
-    <form action="" id="registration">
+    <form th:action="@{/reg/add}" id="registration" th:method="post" th:object="${user_reg}">
         <h2>Registration</h2>
         <br />
-        <label for="first-name-reg">First name</label>
-        <input type="text" id="first-name-reg" placeholder="..." />
+        <label for="full-name-reg">Full name</label>
+        <input type="text" th:field="*{full_name}" id="full-name-reg" placeholder="Example: John Smith" />
 
-        <label for="last-name-reg">Last name</label>
-        <input type="text" id="last-name-reg" placeholder="..." />
+        <label for="password-reg">Password</label>
+        <input type="password" th:field="*{password}" id="password-reg" placeholder="..." />
 
-        <label for="mail-reg">Mail</label>
-        <input type="mail" id="mail-reg" placeholder="..." />
+        <label for="email-reg">Email</label>
+        <input type="email" th:field="*{email}" id="email-reg" placeholder="..." />
 
         <input type="submit" value="Create User" />
     </form>
@@ -32,11 +32,11 @@
     <form action="" id="log-in">
         <h2>Log In</h2>
         <br />
-        <label for="first-name-log">First name</label>
-        <input type="text" id="first-name-log" placeholder="..." />
+        <label for="email-log">Email</label>
+        <input type="email" id="email-log" placeholder="..." />
 
-        <label for="last-name-log">Last name</label>
-        <input type="text" id="last-name-log" placeholder="..." />
+        <label for="password-log">Password</label>
+        <input type="text" id="password-log" placeholder="..." />
 
         <input type="submit" value="Log in" />
     </form>
