@@ -1,0 +1,51 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url(/images/travel_one.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+section#two {
+  position: absolute;
+  top: 10%;
+  left: 20%;
+  width: 70%;
+  height: 80%;
+  background-color: rgba(245, 222, 179, 0.637);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 4% 0;
+}
+
+#two form {
+  width: 150px;
+  font-size: 1.5rem;
+}
+
+#two form input {
+  margin-bottom: 30px;
+  height: 30px;
+  width: 30vh;
+  text-align: center;
+}
+
+hr {
+  width: 7px;
+  height: 100%;
+  background-color: crimson;
+}
+
+#two .back {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
