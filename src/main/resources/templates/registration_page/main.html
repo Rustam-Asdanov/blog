@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Registration</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" th:href="@{style/registration_page/style.css}" />
 </head>
 <body>
 <section id="two">
     <div class="back">
         <a href="/main_page/index.html">
-            <img src="/images/back-ico.png" alt="back-ico" />
+            <img th:src="@{/images/back-ico.png}" alt="back ico" />
         </a>
     </div>
     <form action="" id="registration">
@@ -41,6 +41,6 @@
         <input type="submit" value="Log in" />
     </form>
 </section>
-<script src="script.js"></script>
+<script th:src="@{/script/registration_page/script.js}"></script>
 </body>
 </html>
