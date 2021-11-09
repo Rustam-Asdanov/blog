@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import javax.validation.Valid;
 
 @Controller
-@RequestMapping("/reg")
+@RequestMapping("/registration")
 public class RegistrationController {
 
     private NewUserService newUserService;
@@ -32,14 +32,8 @@ public class RegistrationController {
 
     @PostMapping("/add")
     public String createUser(
-            @Valid @ModelAttribute(name = "user_reg")NewUser newUser,
-            BindingResult bindingResult
+            @ModelAttribute(name = "user_reg")NewUser newUser
             ){
-
-        if(bindingResult.hasErrors()){
-            System.out.println(bindingResult.getModel());
-            return "redirect:/reg";
-        }
 
         newUserService.addUser(newUser);
 

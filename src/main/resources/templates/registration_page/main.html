@@ -1,30 +1,51 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Registration</title>
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
     <link rel="stylesheet" th:href="@{style/registration_page/style.css}" />
 </head>
 <body>
-<section id="two">
+<section th:id="two">
     <div class="back">
         <a th:href="@{/main_page}">
             <img th:src="@{/images/back-ico.png}" alt="back ico" />
         </a>
     </div>
-    <form th:action="@{/reg/add}" id="registration" th:method="post" th:object="${user_reg}">
+    <form th:action="@{/registration/add}" id="registration"
+          th:method="post" th:object="${user_reg}"
+          th:onsubmit="return check();">
         <h2>Registration</h2>
         <br />
         <label for="full-name-reg">Full name</label>
         <input type="text" th:field="*{full_name}" id="full-name-reg" placeholder="Example: John Smith" />
+        <div class="validation">
+            <i class="fas fa-check-circle hidden-suc"></i>
+            <i class="fas fa-exclamation-circle hidden-err"></i>
+            <small class="hidden-err">Error message</small>
+        </div>
 
         <label for="password-reg">Password</label>
         <input type="password" th:field="*{password}" id="password-reg" placeholder="..." />
+        <div class="validation">
+            <i class="fas fa-check-circle hidden-suc"></i>
+            <i class="fas fa-exclamation-circle hidden-err"></i>
+            <small class="hidden-err">Error message</small>
+        </div>
 
         <label for="email-reg">Email</label>
         <input type="email" th:field="*{email}" id="email-reg" placeholder="..." />
+        <div class="validation">
+            <i class="fas fa-check-circle hidden-suc"></i>
+            <i class="fas fa-exclamation-circle hidden-err"></i>
+            <small class="hidden-err">Error message</small>
+        </div>
 
         <input type="submit" value="Create User" />
     </form>
@@ -33,10 +54,10 @@
         <h2>Log In</h2>
         <br />
         <label for="email-log">Email</label>
-        <input type="email" id="email-log" placeholder="..." />
+        <input type="email" field="email_log" id="email-log" placeholder="..." />
 
         <label for="password-log">Password</label>
-        <input type="text" id="password-log" placeholder="..." />
+        <input type="text" field="password_log" id="password-log" placeholder="..." />
 
         <input type="submit" value="Log in" />
     </form>
